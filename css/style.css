@@ -6,33 +6,15 @@ body{
     font-weight: 400;
     font-style: normal;
 }
-h1{
-    margin: 0;
-    padding: 0;
-    color: chocolate;
-    text-align: left;
-    font-size: 50px;
-    font-weight: 600;
-}
-a{
-    text-decoration: none;
-    color: rgba(26, 3, 230, 0.979);
-    padding-right: 10px;
-}
-ul{
-    font-size: x-large;
-    font-weight: bold;
-    list-style-type: none;
-    margin-left: auto;
-    display: flex;
-    gap: 20px;
-}
-li{
-    display: inline-block;
-}
-img{
+body main img{
     max-width: 100%;
     height: auto;
+}
+body main p{
+    color: rgb(207, 8, 41);
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
 }
 .grid-container{
     display: grid;
@@ -40,7 +22,7 @@ img{
     gap: 30px;
     background-color: chocolate;
 }
-.grid-item {
+.grid-item{
     background-color: yellowgreen;
     border: 1px solid #ccc;
     padding: 20px;
@@ -51,7 +33,7 @@ img{
 .flex-container{
     display: flex;
 }
-p{
+.flex-container p{
     color: rgb(207, 8, 41);
     margin: 0;
     padding: 0;
@@ -68,14 +50,30 @@ footer img{
     flex-direction: column;
     justify-content: flex-end;
 }
+footer ul{
+    font-size: x-large;
+    font-weight: bold;
+    list-style-type: none;
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+footer ul li{
+    display: inline-block;
+}
+footer ul li a{
+    text-decoration: none;
+    color: rgba(26, 3, 230, 0.979);
+    padding-right: 10px;
+}
 /*Cards productos*/
-.card {
+.card{
     padding: 30px;
     height: 500px;
     width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-.container {
+.container{
     padding: 2px 16px;
     text-align: center;
     flex-direction: row;
@@ -87,19 +85,33 @@ footer img{
 }
 
 @media screen and (max-width:1010px) {
-    p{
+    body main p{
         font-size: large;
     }
-    img{
+    body main img{
+        height: 200px;
+        width: 200px;
+    }
+    .flex-container p{
+        font-size: large;
+    }
+    .flex-container img{
         height: 200px;
         width: 200px;
     }
 }
 @media screen and (max-width:444px) {
-    p{
+    body main p{
         font-size: medium;
     }
-    img{
+    body main img{
+        height: 150px;
+        width: 150px;
+    }
+    .flex-container p{
+        font-size: medium;
+    }
+    .flex-container img{
         height: 150px;
         width: 150px;
     }
