@@ -92,12 +92,12 @@ footer ul li a{
         height: 200px;
         width: 200px;
     }
+    .flex-container{
+        flex-direction: column;
+        align-items: center;
+    }
     .flex-container p{
         font-size: large;
-    }
-    .flex-container img{
-        height: 200px;
-        width: 200px;
     }
 }
 @media screen and (max-width:444px) {

@@ -77,8 +77,8 @@ footer {
   body main p {
     font-size: large; }
   body main img {
-    height: 200px;
-    width: 200px; }
+    height: 600px;
+    width: 600px; }
   .flex-container p {
     font-size: large; }
   .flex-container img {
@@ -91,6 +91,9 @@ footer {
   body main img {
     height: 150px;
     width: 150px; }
+  .flex-container {
+    flex-direction: column;
+    flex-wrap: wrap; }
   .flex-container p {
     font-size: medium; }
   .flex-container img {
