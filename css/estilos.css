@@ -35,7 +35,8 @@ body {
 .flex-container {
   display: flex;
   margin: 10px;
-  padding: 10px; }
+  padding: 10px;
+  justify-content: space-around; }
   .flex-container p {
     color: #24090e;
     margin: 0;
@@ -105,18 +106,18 @@ footer {
       transition: opacity 0.5s ease; }
       .product-card .main-images img.active {
         opacity: 1; }
-  .product-card .shoe-details .shoe_name {
+  .product-card .product-details .product-name {
     font-size: 24px;
     font-weight: 500;
-    color: #161616; }
-  .product-card .shoe-details p {
+    color: #a50606; }
+  .product-card .product-details p {
     font-size: 12px;
     font-weight: 400;
-    color: #24090e;
+    color: #039c10;
     text-align: justify; }
-  .product-card .shoe-details .stars i {
+  .product-card .product-details .stars i {
     margin: 0 -1px;
-    color: #333; }
+    color: #f3d00c; }
   .product-card .color-price {
     display: flex;
     justify-content: space-between;

@@ -50,6 +50,7 @@ body {
     display: flex;
     margin: $margin-padding;
     padding: $margin-padding;
+    justify-content: space-around;
 
     p {
         color: $font-color;
@@ -146,23 +147,23 @@ footer {
         }
     }
 
-    .shoe-details {
-        .shoe_name {
+    .product-details {
+        .product-name {
             font-size: 24px;
             font-weight: 500;
-            color: #161616;
+            color: #a50606;
         }
 
         p {
             font-size: 12px;
             font-weight: 400;
-            color: $font-color;
+            color: #039c10;
             text-align: justify;
         }
 
         .stars i {
             margin: 0 -1px;
-            color: #333;
+            color: #f3d00c;
         }
     }
 
