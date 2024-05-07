@@ -1,26 +1,31 @@
+/* VARIABLES */
+/* STYLES */
 body {
   margin: 0;
   padding: 0;
-  background-color: yellowgreen;
+  background-color: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
   font-family: "Crimson Text", serif;
   font-weight: 400;
-  font-style: normal; }
+  font-style: normal;
+  background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%); }
   body main img {
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    margin: 10px;
+    padding: 10px; }
   body main p {
-    color: #cf0829;
-    margin: 0;
-    padding: 0;
+    color: #24090e;
+    margin: 10px;
+    padding: 10px;
     font-size: x-large; }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  background-color: chocolate; }
+  background-color: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%); }
   .grid-container .grid-item {
-    background-color: yellowgreen;
+    background-color: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
@@ -28,9 +33,11 @@ body {
     height: 100%; }
 
 .flex-container {
-  display: flex; }
+  display: flex;
+  margin: 10px;
+  padding: 10px; }
   .flex-container p {
-    color: #cf0829;
+    color: #24090e;
     margin: 0;
     padding: 0;
     font-size: x-large; }
@@ -55,24 +62,139 @@ footer {
       display: inline-block; }
       footer ul li a {
         text-decoration: none;
-        color: rgba(26, 3, 230, 0.979);
+        color: #24090e;
         padding-right: 10px; }
 
 /* Cards productos */
-.card {
-  padding: 30px;
-  height: 500px;
-  width: 500px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
-  .card .container {
-    padding: 2px 16px;
-    text-align: center;
-    flex-direction: row;
-    justify-content: space-around; }
-    .card .container img {
-      height: 80%;
-      width: 80%; }
+.product-card {
+  position: relative;
+  max-width: 355px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 20px 30px 30px 30px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  overflow: hidden; }
+  .product-card .logo-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .product-card .logo-cart img {
+      height: 60px;
+      width: 60px;
+      object-fit: cover; }
+    .product-card .logo-cart i {
+      font-size: 27px;
+      color: #707070;
+      cursor: pointer;
+      transition: color 0.3s ease; }
+      .product-card .logo-cart i:hover {
+        color: #333; }
+  .product-card .main-images {
+    position: relative;
+    height: 210px; }
+    .product-card .main-images img {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+      top: -40px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease; }
+      .product-card .main-images img.active {
+        opacity: 1; }
+  .product-card .shoe-details .shoe_name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #161616; }
+  .product-card .shoe-details p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #24090e;
+    text-align: justify; }
+  .product-card .shoe-details .stars i {
+    margin: 0 -1px;
+    color: #333; }
+  .product-card .color-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; }
+    .product-card .color-price .color-option {
+      display: flex;
+      align-items: center; }
+      .product-card .color-price .color-option .color {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        margin-right: 8px; }
+      .product-card .color-price .color-option .circles {
+        display: flex; }
+        .product-card .color-price .color-option .circles .circle {
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          margin: 0 4px;
+          cursor: pointer;
+          transition: all 0.4s ease; }
+          .product-card .color-price .color-option .circles .circle.blue {
+            background: #0071C7; }
+            .product-card .color-price .color-option .circles .circle.blue.active {
+              box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0071C7; }
+          .product-card .color-price .color-option .circles .circle.pink {
+            background: #FA1795; }
+            .product-card .color-price .color-option .circles .circle.pink.active {
+              box-shadow: 0 0 0 2px #fff, 0 0 0 4px #FA1795; }
+          .product-card .color-price .color-option .circles .circle.yellow {
+            background: #F5DA00; }
+            .product-card .color-price .color-option .circles .circle.yellow.active {
+              box-shadow: 0 0 0 2px #fff, 0 0 0 4px #F5DA00; }
+    .product-card .color-price .price {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .product-card .color-price .price .price_num {
+        font-size: 25px;
+        font-weight: 600;
+        color: #707070; }
+      .product-card .color-price .price .price_letter {
+        font-size: 10px;
+        font-weight: 600;
+        margin-top: -4px;
+        color: #707070; }
+  .product-card .button {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 30px;
+    overflow: hidden; }
+    .product-card .button .button-layer {
+      position: absolute;
+      height: 100%;
+      width: 300%;
+      left: -100%;
+      background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
+      transition: all 0.4s ease;
+      border-radius: 25px; }
+    .product-card .button:hover .button-layer {
+      left: 0; }
+    .product-card .button button {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background: none;
+      outline: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff; }
 
+/* MEDIA QUERYS */
 @media screen and (max-width: 1010px) {
   body main p {
     font-size: large; }
@@ -92,8 +214,7 @@ footer {
     height: 150px;
     width: 150px; }
   .flex-container {
-    flex-direction: column;
-    flex-wrap: wrap; }
+    flex-direction: column; }
   .flex-container p {
     font-size: medium; }
   .flex-container img {
